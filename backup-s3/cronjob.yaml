@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: backup-job
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: backup
+            image: devopseasylearning/babette-backup:v1.1.5
+            envFrom:
+            - configMapRef:
+                name: postgres-config
+            - secretRef:
+                name: mysecrets
+          restartPolicy: OnFailure
+  successfulJobsHistoryLimit: 3

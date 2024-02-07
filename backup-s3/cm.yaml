@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-config
+data:
+   POSTGRES_HOST: "db-postgresql-nyc3-26515-do-user-12198957-0.c.db.ondigitalocean.com"
+   POSTGRES_PORT:  "25060"
+   POSTGRES_DB: "s6-user"
+   POSTGRES_USER: "doadmin"
+   AWS_DEFAULT_REGION: "us-east-1"
+   BUCKET_NAME: "del-db-backup/S6/a1babette/"
+
+
+  
+
